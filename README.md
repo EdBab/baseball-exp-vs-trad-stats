@@ -1,4 +1,4 @@
-# What is more predictive or future performance: Traditional Stats or Expected Stats?
+# What is more predictive of future performance: Traditional Stats or Expected Stats?
 
 ## History
 
@@ -30,6 +30,43 @@ Lastly, Baseball Savant's API is not returning data for 2020, which may be becau
 
 ### Using the tool
 
+```
+python3 expected_comp.py --help
+usage: expected_comp.py [-h] --sample_seasons SAMPLE_SEASONS --test_season TEST_SEASON
+
+A utility that pulls, graphs, and compares historical traditional and expected stats in order to determine which is a better indicator of future performance
+r^2 will be used to judge which stat has a strong, linear correlation to future production
+
+options:
+  -h, --help            show this help message and exit
+  --sample_seasons SAMPLE_SEASONS
+                        The season(s) you want to use as a baseline
+  --test_season TEST_SEASON
+                        The future season you want to use to see if traditional stats or expected stats are a better predictor of
+```
+#### Good examples
+```
+python3 expected_comp.py --sample_seasons 2015-2021 --test_season 2022
+```
+```
+python3 expected_comp.py --sample_seasons 2021 --test_season 2022
+```
+#### Bad examples
+
+```
+python3 expected_comp.py --sample_seasons 2015-2021 --test_season 2024
+ERROR: Cannot fetch Statcast data for 2024. Has data been published for this year yet?
+```
+```
+python3 expected_comp.py --sample_seasons 2014 --test_season 2023
+ERROR: Statcast data was introduced in 2015, you cannot search for data before this point
+```
+```
+python3 expected_comp.py --sample_seasons 20149e42 --test_season 2023
+usage: expected_comp.py [-h] --sample_seasons SAMPLE_SEASONS --test_season TEST_SEASON
+expected_comp.py: error: argument --sample_seasons: You must either supply a single season, or multiple, consecutive seasons separated by a hyphen.
+Ex. 2001-2004
+```
 
 ## Results
 
