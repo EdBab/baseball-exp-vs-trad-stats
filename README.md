@@ -30,6 +30,12 @@ Lastly, Baseball Savant's API is not returning data for 2020, which may be becau
 
 ### Using the tool
 
+#### Installing the dependencies
+```
+pip3 install -r requirements.txt
+```
+
+#### Running the program
 ```
 python3 expected_comp.py --help
 usage: expected_comp.py [-h] --sample_seasons SAMPLE_SEASONS --test_season TEST_SEASON

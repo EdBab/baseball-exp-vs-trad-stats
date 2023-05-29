@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(
     description=(
         "A utility that pulls, graphs, and compares historical traditional and"
         " expected stats in order to determine which is a better indicator of"
-        " future performance\nr^2 will be used to judge which stat has a"
+        " future performance\nPearson's Correlation Coefficient will be used to judge which stat has a"
         " strong, linear correlation to future production"
     )
 )
